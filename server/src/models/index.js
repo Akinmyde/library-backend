@@ -11,7 +11,7 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = configSetup[env];
 const sequelize = new Sequelize(config);
-dbConnection(sequelize, config);
+dbConnection(sequelize);
 const db = {};
 
 fs
@@ -31,4 +31,5 @@ Object.keys(db).forEach((modelName) => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-module.exports = { db, config };
+
+export { db, config };

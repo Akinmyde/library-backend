@@ -1,8 +1,8 @@
-const dbConnection = (sequelize, config) => {
+const dbConnection = (sequelize) => {
   sequelize
     .authenticate()
     .then(() => {
-      console.log('connection to the database established', config);
+      console.log('connection to the database established');
     })
     .catch(err => console.log('error connecting to the database', err));
 };
