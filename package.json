@@ -7,7 +7,9 @@
     "start": "npm run build && node dist/app.js",
     "build": "babel server/src -d dist",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "start:dev": "nodemon server/src/app.js --exec babel-node",
+    "start:dev": "export NODE_ENV=development && nodemon server/src/app.js --exec babel-node",
+    "start:conn": "babel-node server/src/models --exit",
+    "pretest": "export NODE_ENV=test || SET \"NODE_ENV=test\" && npm run start:conn",
     "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && nyc mocha test/**/*.test.js --timeout 20000 --require @babel/register --exit"
   },
   "repository": {
@@ -43,6 +45,9 @@
     "chalk": "^2.4.2",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pg": "^7.8.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^5.1.0"
   }
 }
