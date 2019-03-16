@@ -1,6 +1,5 @@
-import dotenv from 'dotenv';
+require('dotenv').config();
 
-dotenv.config();
 
 const dialect = 'postgres';
 

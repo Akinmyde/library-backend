@@ -1,7 +1,10 @@
+import '@babel/polyfill';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import chalk from 'chalk';
+import { db } from './models/index';
+import dbConn from './startup/dbConnection';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -22,6 +25,7 @@ if (!module.parent) {
   app.listen(port, () => {
     // eslint-disable-next-line no-console
     console.log(`listening on port ${chalk.blue(port)}`);
+    dbConn(db.sequelize);
   });
 }
 

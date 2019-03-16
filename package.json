@@ -9,8 +9,12 @@
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "start:dev": "export NODE_ENV=development && nodemon server/src/app.js --exec babel-node",
     "start:conn": "babel-node server/src/models --exit",
-    "pretest": "export NODE_ENV=test || SET \"NODE_ENV=test\" && npm run start:conn",
-    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && nyc mocha test/**/*.test.js --timeout 20000 --require @babel/register --exit"
+    "pretest": "export NODE_ENV=test || SET \"NODE_ENV=test\" && npm run db:reset && npm run start:conn",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && nyc mocha test/**/*.test.js --timeout 20000 --require @babel/register --exit",
+    "migrate": "sequelize db:migrate",
+    "migrate:undo": "sequelize db:migrate:undo:all",
+    "seed": "sequelize db:seed:all",
+    "db:reset": "npm run migrate:undo && npm run migrate && npm run seed"
   },
   "repository": {
     "type": "git",
@@ -27,7 +31,6 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
-    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.4",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
@@ -41,6 +44,7 @@
     "nyc": "^13.3.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "body-parser": "^1.18.3",
     "chalk": "^2.4.2",
     "cors": "^2.8.5",
@@ -49,6 +53,7 @@
     "jsonwebtoken": "^8.5.0",
     "pg": "^7.8.2",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^5.1.0"
+    "sequelize": "^5.1.0",
+    "sequelize-cli": "^5.4.0"
   }
 }
