@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import chalk from 'chalk';
-
+import routes from './routes';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -15,6 +15,8 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
   res.send('Welcome to the backend of Library');
 });
+
+app.use('/api/v1', routes);
 
 app.all('*', (req, res) => {
   res.status(404).json({ status: 404, error: 'Sorry, the page you tried cannot be found' });
