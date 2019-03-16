@@ -1,9 +1,10 @@
 import express from 'express';
-import bookMiddlewares from '../middlewares';
-import bookControllers from '../controllers';
+import getBookById from './getbookbyidroute';
+import postBorrowBookroute from './postborrowbookroute';
 
 const router = express.Router();
 
-router.get('/books/:id', bookMiddlewares.validateId, bookMiddlewares.checkForBook, bookControllers.getBookById);
+router.use('/', getBookById);
+router.use('/books', postBorrowBookroute);
 
 export default router;

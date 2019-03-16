@@ -33,13 +33,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     borrowedon: {
       type: DataTypes.DATE,
-      defaultValue: false,
+      defaultValue: sequelize.NOW,
     },
     returnon: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: sequelize.NOW,
     },
   });
-
   return Bookhistory;
 };

@@ -25,5 +25,4 @@ module.exports = {
       returnon: Sequelize.fn('now'),
     },
   ]),
-
 };
