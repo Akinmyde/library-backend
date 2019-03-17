@@ -12,9 +12,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
 app.get('/', (req, res) => {
-  res.send('Welcome to the backend of Library');
+  res.send('Welcome to the backend of library');
 });
 
 app.use('/api/v1', routes);
@@ -25,6 +24,7 @@ app.all('*', (req, res) => {
 
 if (!module.parent) {
   app.listen(port, () => {
+    // eslint-disable-next-line no-console
     console.log(`listening on port ${chalk.blue(port)}`);
   });
 }
