@@ -1,5 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
   const bookhistory = sequelize.define('bookhistory', {
+    id: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      allowNull: false,
+    },
     bookid: {
       type: DataTypes.UUID,
       allowNull: false,

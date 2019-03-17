@@ -1,5 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
   const users = sequelize.define('users', {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      unique: true,
+      primaryKey: true,
+    },
     fullname: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
   });
   users.associate = (models) => {

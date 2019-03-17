@@ -32,4 +32,4 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 
-export { db, config };
+export default db;
