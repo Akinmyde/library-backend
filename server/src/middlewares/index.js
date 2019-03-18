@@ -1,4 +1,5 @@
 import Book from './getBooksById';
 import BorrowBook from './postBorrowBook';
+import middleware from './getborrowedbookbyid';
 
-export { BorrowBook, Book };
+export { middleware, BorrowBook, Book };

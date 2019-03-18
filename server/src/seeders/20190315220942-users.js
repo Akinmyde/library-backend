@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 module.exports = {
   up: queryInterface => queryInterface.bulkInsert('Users', [
     {
@@ -23,6 +24,12 @@ module.exports = {
       id: 'f5f4f498-6782-44d0-b1a7-347014fadeb8',
       fullname: 'Akinwale Samuel',
       email: 'Samuel@mail.com',
+      password: '12345678',
+    },
+    {
+      id: '859f29ae-f451-437e-b727-b19857ebfff2',
+      fullname: 'Akinremi olumide',
+      email: 'olu@mail.com',
       password: '12345678',
     },
   ]),

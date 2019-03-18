@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 module.exports = {
   up: queryInterface => queryInterface.bulkInsert('Books', [{
     id: '7139d3af-b8b4-44f6-a49f-9305791700f4',
