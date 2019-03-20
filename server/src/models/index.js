@@ -3,7 +3,6 @@ import path from 'path';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
 import configSetup from '../config/config';
-import dbConnection from '../startup/dbConnection';
 
 dotenv.config();
 
@@ -11,7 +10,6 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = configSetup[env];
 const sequelize = new Sequelize(config);
-dbConnection(sequelize);
 const db = {};
 
 fs
@@ -32,4 +30,4 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 
-export { db, config };
+export default db;
