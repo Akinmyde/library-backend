@@ -1,3 +1,4 @@
-import bookValidation from './getBooksById';
+import Book from './getBooksById';
+import BorrowBook from './postBorrowBook';
 
-export default bookValidation;
+export { BorrowBook, Book };

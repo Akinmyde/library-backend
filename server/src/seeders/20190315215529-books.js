@@ -16,5 +16,4 @@ module.exports = {
     description: 'A powerful book on PIP',
   },
   ]),
-
 };

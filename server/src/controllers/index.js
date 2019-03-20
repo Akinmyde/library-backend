@@ -1,3 +1,4 @@
-import getBookById from './getBookById';
+import getBook from './getBookById';
+import PostBorrowBook from './postborrowbook';
 
-export default getBookById;
+export { PostBorrowBook, getBook };
