@@ -3,11 +3,13 @@ import getBookById from './getbookbyidroute';
 import postBorrowBookroute from './postborrowbookroute';
 import { BorrowedBook } from '../controllers';
 import { middleware } from '../middlewares';
+import getBooks from './getbooks';
 
 const router = express.Router();
 
 router.use('/', getBookById);
 router.use('/books', postBorrowBookroute);
+router.use('/', getBooks);
 
 const {
   checkParamsId, verifyId, checksIfUserExists, checksIfhistoryExist,
