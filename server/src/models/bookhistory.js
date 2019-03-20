@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 module.exports = (sequelize, DataTypes) => {
   const Bookhistory = sequelize.define('Bookhistory', {
     id: {
