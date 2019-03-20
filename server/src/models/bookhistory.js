@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: 'books',
+        model: 'Books',
         key: 'id',
       },
     },
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: 'users',
+        model: 'Users',
         key: 'id',
       },
     },
@@ -40,9 +40,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-  Bookhistory.associate = (models) => {
-    // associations can be defined here
 
-  };
   return Bookhistory;
 };
