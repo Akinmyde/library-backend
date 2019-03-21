@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('books', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('Books', {
     id: {
       allowNull: false,
       primaryKey: true,
@@ -40,5 +40,5 @@ module.exports = {
       defaultValue: Sequelize.fn('now'),
     },
   }),
-  down: (queryInterface, Sequelize) => queryInterface.dropTable('books'),
+  down: (queryInterface, Sequelize) => queryInterface.dropTable('Books'),
 };

@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('bookhistories', [
+  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Bookhistories', [
     {
       id: '34ca3f3a-239e-46c1-888e-2d597d482b7b',
       userid: '6517a6ea-662b-4eef-ab9f-20f89bd7099c',

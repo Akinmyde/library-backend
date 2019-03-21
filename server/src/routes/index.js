@@ -1,9 +1,9 @@
 import express from 'express';
-import { Users } from '../controllers';
+import { User } from '../controllers';
 import { middleware } from '../middlewares';
 
 const router = express.Router();
 
-router.post('/auth/users', middleware.validateUser, Users.createUser);
+router.post('/auth/users', middleware.validateUser, User.createUser);
 
 export default router;

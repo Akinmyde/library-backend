@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('books', [{
+  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Books', [{
     id: '7139d3af-b8b4-44f6-a49f-9305791700f4',
     title: 'Communication Skills',
     author: 'Anayo Olero',

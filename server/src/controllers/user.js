@@ -1,15 +1,15 @@
 import model from '../models';
 import Authenticate from '../helpers';
 
-const { users } = model;
+const { Users } = model;
 
-class Users {
+class User {
   /**
    * @description - this method creates a new User
    *
    * @static
    * @param {object} userObj
-   * @memberof Users
+   * @memberof User
    */
   static async createUser(req, res) {
     const {
@@ -17,7 +17,7 @@ class Users {
       email,
     } = req.body;
     const hash = Authenticate.hashPassword(req.body.password);
-    const newUser = await users.create({
+    const newUser = await Users.create({
       fullname, email, hash,
     });
     delete newUser.dataValues.password;
@@ -27,4 +27,4 @@ class Users {
     });
   }
 }
-export default Users;
+export default User;

@@ -1,15 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
-  const bookhistory = sequelize.define('bookhistory', {
+  const Bookhistory = sequelize.define('Bookhistory', {
     id: {
-      type: DataTypes.UUID,
-      primaryKey: true,
       allowNull: false,
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      unique: true,
     },
     bookid: {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: 'books',
+        model: 'Books',
         key: 'id',
       },
     },
@@ -17,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: 'users',
+        model: 'Users',
         key: 'id',
       },
     },
@@ -38,10 +40,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-  bookhistory.associate = (models) => {
+  Bookhistory.associate = (models) => {
     // associations can be defined here
-    bookhistory.hasMany(models.books);
-    bookhistory.hasMany(models.users);
+
   };
-  return bookhistory;
+  return Bookhistory;
 };
