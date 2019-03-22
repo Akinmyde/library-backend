@@ -9,8 +9,9 @@ const app = express();
 const port = process.env.PORT || 2000;
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 
 app.get('/', (req, res) => {
   res.send('Welcome to the backend of Library');
@@ -24,7 +25,6 @@ app.all('*', (req, res) => {
 
 if (!module.parent) {
   app.listen(port, () => {
-    // eslint-disable-next-line no-console
     console.log(`listening on port ${chalk.blue(port)}`);
   });
 }

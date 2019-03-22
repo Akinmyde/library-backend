@@ -49,5 +49,6 @@ module.exports = {
       defaultValue: Sequelize.fn('now'),
     },
   }),
-  down: (queryInterface, Sequelize) => queryInterface.dropTable('Bookhistories'),
+
+  down: queryInterface => queryInterface.dropTable('Bookhistories'),
 };

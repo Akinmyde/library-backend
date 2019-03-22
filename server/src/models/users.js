@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 module.exports = (sequelize, DataTypes) => {
   const Users = sequelize.define('Users', {
     id: {

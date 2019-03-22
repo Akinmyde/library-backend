@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Users', [
+  up: queryInterface => queryInterface.bulkInsert('Users', [
     {
       id: '6517a6ea-662b-4eef-ab9f-20f89bd7099c',
       fullname: 'Anayo Olero',
@@ -25,15 +26,11 @@ module.exports = {
       email: 'Samuel@mail.com',
       password: '12345678',
     },
+    {
+      id: '859f29ae-f451-437e-b727-b19857ebfff2',
+      fullname: 'Akinremi olumide',
+      email: 'olu@mail.com',
+      password: '12345678',
+    },
   ]),
-
-  down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
-  },
 };

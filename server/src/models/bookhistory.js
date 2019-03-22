@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 module.exports = (sequelize, DataTypes) => {
   const Bookhistory = sequelize.define('Bookhistory', {
     id: {
@@ -33,11 +34,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     borrowedon: {
       type: DataTypes.DATE,
-      defaultValue: false,
+      defaultValue: sequelize.NOW,
     },
     returnon: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: sequelize.NOW,
     },
   });
   Bookhistory.associate = (models) => {

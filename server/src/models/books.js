@@ -1,5 +1,13 @@
+/* eslint-disable no-unused-vars */
 module.exports = (sequelize, DataTypes) => {
   const Books = sequelize.define('Books', {
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      unique: true,
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    decription: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },

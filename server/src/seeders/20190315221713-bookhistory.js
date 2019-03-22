@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.bulkInsert('Bookhistories', [
     {
@@ -8,6 +9,12 @@ module.exports = {
     },
     {
       id: '5bced466-6971-487f-af75-5a823e90a6ca',
+      userid: '57c515a1-890d-412f-8ca1-0a5395123dca',
+      bookid: '7139d3af-b8b4-44f6-a49f-9305791700f4',
+      returnon: Sequelize.fn('now'),
+    },
+    {
+      id: '7366ff1f-7c65-46c4-8602-52d388255b45',
       userid: '57c515a1-890d-412f-8ca1-0a5395123dca',
       bookid: '7139d3af-b8b4-44f6-a49f-9305791700f4',
       returnon: Sequelize.fn('now'),
@@ -25,14 +32,4 @@ module.exports = {
       returnon: Sequelize.fn('now'),
     },
   ]),
-
-  down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
-  }
 };
