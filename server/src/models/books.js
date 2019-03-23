@@ -29,5 +29,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
+  Books.associate = (models) => {
+    // associations can be defined here
+  };
   return Books;
 };

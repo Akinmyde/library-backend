@@ -41,5 +41,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: sequelize.NOW,
     },
   });
+  Bookhistory.associate = (models) => {
+    // associations can be defined here
+
+  };
   return Bookhistory;
 };

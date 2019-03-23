@@ -1,4 +1,5 @@
 import express from 'express';
+import { User } from '../controllers';
 import getBookById from './getbookbyidroute';
 import postBorrowBookroute from './postborrowbookroute';
 import { BorrowedBook } from '../controllers';
@@ -7,6 +8,7 @@ import getBooks from './getbooks';
 
 const router = express.Router();
 
+router.post('/auth/users', middleware.validateUser, User.createUser);
 router.use('/', getBookById);
 router.use('/books', postBorrowBookroute);
 router.use('/', getBooks);

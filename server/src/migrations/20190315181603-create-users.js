@@ -21,7 +21,6 @@ module.exports = {
     },
     password: {
       type: Sequelize.STRING,
-      allowNull: false,
     },
     createdAt: {
       allowNull: false,
@@ -34,5 +33,6 @@ module.exports = {
       defaultValue: Sequelize.fn('now'),
     },
   }),
+
   down: queryInterface => queryInterface.dropTable('Users'),
 };
