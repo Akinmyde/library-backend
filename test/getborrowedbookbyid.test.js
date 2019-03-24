@@ -12,11 +12,9 @@ describe('GET A BORROWED BOOK HISTORY', () => {
         const {
           bookid,
           userid,
-          bookreturned,
           borrowedon,
           createdAt,
           id,
-          isexpired,
           returnon,
           updatedAt,
         } = data[0];
@@ -24,7 +22,7 @@ describe('GET A BORROWED BOOK HISTORY', () => {
         expect(res).to.have.status(200);
         expect(data).to.be.a('array');
         expect(res.body.data[0]).contains({
-          id, bookid, userid, bookreturned, isexpired, borrowedon, returnon, createdAt, updatedAt,
+          id, bookid, userid, borrowedon, returnon, createdAt, updatedAt,
         });
         done();
       });

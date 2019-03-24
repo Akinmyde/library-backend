@@ -22,11 +22,7 @@ module.exports = {
         key: 'id',
       },
     },
-    bookreturned: {
-      type: Sequelize.BOOLEAN,
-      defaultValue: false,
-    },
-    isexpired: {
+    isborrowed: {
       type: Sequelize.BOOLEAN,
       defaultValue: false,
     },
@@ -34,9 +30,21 @@ module.exports = {
       type: Sequelize.DATE,
       defaultValue: Sequelize.fn('now'),
     },
+    isreturned: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
+    },
     returnon: {
       type: Sequelize.DATE,
-      allowNull: false,
+      defaultValue: Sequelize.fn('now'),
+    },
+    isexpired: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
+    },
+    expireson: {
+      type: Sequelize.DATE,
+      defaultValue: Sequelize.fn('now'),
     },
     createdAt: {
       allowNull: false,

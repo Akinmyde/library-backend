@@ -24,19 +24,23 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
       },
     },
-    bookreturned: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-    isexpired: {
+    isborrowed: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
     borrowedon: {
       type: DataTypes.DATE,
-      defaultValue: sequelize.NOW,
+
+    },
+    isreturned: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     returnon: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.NOW,
+    },
+    expireson: {
       type: DataTypes.DATE,
       allowNull: sequelize.NOW,
     },
