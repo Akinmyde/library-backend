@@ -45,5 +45,13 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: sequelize.NOW,
     },
   });
+  Bookhistory.associate = (models) => {
+    Bookhistory.belongsTo(models.Users, {
+      foreignKey: 'userid',
+    });
+    Bookhistory.belongsTo(models.Books, {
+      foreignKey: 'bookid',
+    });
+  };
   return Bookhistory;
 };
